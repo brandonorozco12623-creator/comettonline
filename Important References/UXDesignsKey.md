@@ -213,4 +213,4 @@ Non-traditional typography (warped, minimal, serif/sans juxtapositions)
 
 Internet-influenced art movements (glitch, post-digital, anti-design)
 
-A preference for atmosphere over symmetry
+A preference for atmosphere over symmetrye
