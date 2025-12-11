@@ -3,6 +3,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  height: 100%;
 }
 
 /* Respect user motion preferences */
@@ -30,6 +31,12 @@ body {
   text-transform: lowercase;
   overflow-x: hidden;
   position: relative;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /* Typography */
