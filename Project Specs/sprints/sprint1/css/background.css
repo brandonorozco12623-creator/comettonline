@@ -1,0 +1,52 @@
+/* Background Animation Canvas Styles */
+
+#background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+#background-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Hero Shader Canvas */
+#hero-shader-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#hero-shader-canvas canvas {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure content layers are above background */
+.header {
+  position: fixed;
+  z-index: 1000;
+}
+
+.hero {
+  position: relative;
+}
+
+.links,
+.footer,
+.cookie-consent {
+  position: relative;
+  z-index: 1;
+}

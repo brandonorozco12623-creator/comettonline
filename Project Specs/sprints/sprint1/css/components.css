@@ -43,9 +43,11 @@
   color: var(--comet-vibrant-blue);
 }
 
-.platform-icon svg {
+.platform-icon svg,
+.platform-icon i {
   width: 24px;
   height: 24px;
+  color: var(--comet-vibrant-blue);
 }
 
 .link-text {
