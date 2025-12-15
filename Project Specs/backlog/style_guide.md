@@ -1,4 +1,4 @@
-# comett! Website Style Guide
+git # comett! Website Style Guide
 
 **Project**: comett! Promotional Website  
 **Version**: 1.0  
