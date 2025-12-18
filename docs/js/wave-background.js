@@ -1,13 +1,20 @@
 // Wave Grid Background Animation
 let t = 0;
+let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function setup() {
+  // Skip animation setup if user prefers reduced motion
+  if (prefersReducedMotion) {
+    noLoop();
+    return;
+  }
+  
   let canvas = createCanvas(windowWidth, windowHeight);
   canvas.parent('background-canvas');
   strokeWeight(1.5);
   stroke(255, 255, 255, 80);
   noFill();
-  frameRate(20);
+  frameRate(15); // Reduced from 20 for better performance
 }
 
 function draw() {

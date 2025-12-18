@@ -5,23 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="comett! - independent musician. listen to my music across all platforms.">
   <meta name="author" content="comett!">
+  <meta name="theme-color" content="#1f2230">
   
   <!-- Open Graph / Social Media -->
   <meta property="og:title" content="comett! - musician">
   <meta property="og:description" content="independent musician. listen to my music across all platforms.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brandonorozco12623-creator.github.io/comettonline/">
+  <meta property="og:site_name" content="comett!">
   
   <title>comett! - musician</title>
   
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/main.css">
+  <!-- Performance: Preconnect to external domains -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Critical CSS - Inlined for faster First Contentful Paint -->
+  <style>
+    html{scroll-behavior:smooth;font-size:16px;height:100%}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','Arial',sans-serif;font-size:1rem;font-weight:400;line-height:1.7;color:#d6d6db;background-color:#1f2230;text-transform:lowercase;overflow-x:hidden;position:relative;min-height:100vh;height:100%;display:flex;flex-direction:column;margin:0;padding:0}
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(31,34,48,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(143,157,183,0.2)}
+    .skip-link{position:absolute;top:-40px;left:0;background:#477ab4;color:#1f2230;padding:1rem 1.5rem;text-decoration:none;font-weight:700;z-index:100}
+    .skip-link:focus{top:0}
+  </style>
   
-  <!-- p5.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" data-p5-instance="heroShader"></script>
+  <!-- Stylesheet - Non-blocking load -->
+  <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+  
+  <!-- Font Awesome - Preloaded for faster rendering -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></noscript>
+  
+  <!-- p5.js Library - Deferred for better performance -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" as="script">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
 </head>
 <body>
   <!-- Background Animation Canvas -->
@@ -34,9 +52,9 @@
     <nav class="nav" aria-label="Main navigation">
       <!-- Hamburger Menu (Mobile) -->
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
       
       <!-- Navigation Menu -->
@@ -210,10 +228,10 @@
   <div class="grain-overlay" aria-hidden="true"></div>
   <div class="noise-layer" aria-hidden="true"></div>
 
-  <!-- Scripts -->
-  <script src="js/wave-background.js"></script>
-  <script src="js/hero-pattern.js"></script>
-  <script src="js/menu.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Scripts - Deferred for performance -->
+  <script defer src="js/menu.js"></script>
+  <script defer src="js/wave-background.js"></script>
+  <script defer src="js/hero-pattern.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>

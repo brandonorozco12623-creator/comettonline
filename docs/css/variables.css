@@ -26,10 +26,13 @@
   --text-2xl: 2rem;     /* 32px */
   --text-3xl: 2.5rem;   /* 40px */
   
-  /* Font Families */
+  /* Font Families - System fonts for optimal performance */
   --font-serif: 'Times New Roman', 'Georgia', 'Garamond', serif;
   --font-sans: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Arial', sans-serif;
   --font-mono: 'Courier New', 'Monaco', 'Consolas', monospace;
+  
+  /* Font Display - Ensure text is visible during loading */
+  font-display: swap;
   
   /* Transitions */
   --transition-fast: 0.15s ease;

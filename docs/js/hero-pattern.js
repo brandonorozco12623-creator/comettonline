@@ -37,7 +37,8 @@ float noise(vec2 p) {
 float fbm(vec2 p) {
     float value = 0.0;
     float amplitude = 0.25;
-    for (int i = 0; i < 2; i++) {
+    // Reduced from 2 to 1 iteration for better performance
+    for (int i = 0; i < 1; i++) {
         value += amplitude * noise(p);
         p *= 1.25;
         amplitude *= 0.125;
@@ -128,6 +129,9 @@ function windowResized() {
 // Create instance mode to avoid conflicts
 new p5(function(p) {
   p.setup = function() {
+    // Check for reduced motion preference
+    let prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
     let heroSection = document.querySelector('.hero');
     if (!heroSection) return;
 
@@ -140,6 +144,12 @@ new p5(function(p) {
     theShader = p.createShader(vert, frag);
     p.shader(theShader);
     p.noStroke();
+    p.frameRate(30); // Limit frame rate for better performance
+    
+    // Stop animation if user prefers reduced motion
+    if (prefersReducedMotion) {
+      p.noLoop();
+    }
   };
 
   p.draw = function() {
