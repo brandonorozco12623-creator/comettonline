@@ -263,3 +263,8 @@
 .footer-link:hover {
   color: var(--comet-light-metal);
 }
+
+.footer-divider {
+  margin: 0 var(--space-sm);
+  color: var(--comet-muted-blue);
+}
