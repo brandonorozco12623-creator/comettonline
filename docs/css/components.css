@@ -6,7 +6,7 @@
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-lg);
-  background: rgba(31, 34, 48, 0.8);
+  background: rgb(31, 34, 48);
   border: 1px solid rgba(143, 157, 183, 0.3);
   color: var(--comet-light-metal);
   text-decoration: none;
@@ -18,15 +18,12 @@
   position: relative;
   overflow: hidden;
   min-height: 64px;
-  backdrop-filter: blur(5px);
   border-radius: var(--radius-sm);
-  will-change: transform;
-  contain: layout style paint;
 }
 
 .platform-link:hover {
   border-color: var(--comet-vibrant-blue);
-  background: rgba(71, 122, 180, 0.15);
+  background: rgb(40, 45, 60);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -87,29 +84,13 @@
 
 .platform-link:hover .link-text::before {
   text-shadow: 3px 0 rgba(71, 122, 180, 0.8);
-  animation: glitch-loop-1 0.8s infinite ease-in-out alternate-reverse;
 }
 
 .platform-link:hover .link-text::after {
   text-shadow: -4px 0 rgba(76, 201, 240, 0.8);
-  animation: glitch-loop-2 0.8s infinite ease-in-out alternate-reverse;
 }
 
-@keyframes glitch-loop-1 {
-  0% { clip: rect(8px, 9999px, 2px, 0); }
-  25% { clip: rect(6px, 9999px, 22px, 0); }
-  50% { clip: rect(12px, 9999px, 24px, 0); }
-  75% { clip: rect(7px, 9999px, 21px, 0); }
-  100% { clip: rect(20px, 9999px, 23px, 0); }
-}
-
-@keyframes glitch-loop-2 {
-  0% { top: -1px; left: 1px; clip: rect(15px, 9999px, 28px, 0); }
-  25% { top: -2px; left: 2px; clip: rect(18px, 9999px, 4px, 0); }
-  50% { top: -1px; left: 1px; clip: rect(16px, 9999px, 3px, 0); }
-  75% { top: 0px; left: -2px; clip: rect(22px, 9999px, 12px, 0); }
-  100% { top: -1px; left: -1px; clip: rect(7px, 9999px, 35px, 0); }
-}
+/* Animations removed for performance */
 
 /* RGB Channel Separation Effect */
 .artist-name::before,
@@ -129,7 +110,6 @@
   text-shadow: -2px 0 var(--comet-vibrant-blue);
   color: var(--comet-vibrant-blue);
   opacity: 0.8;
-  animation: glitch-before 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
 .artist-name:hover::after {
@@ -137,44 +117,11 @@
   text-shadow: 2px 0 var(--comet-earth-teal);
   color: var(--comet-earth-teal);
   opacity: 0.8;
-  animation: glitch-after 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
 }
 
-@keyframes glitch-before {
-  0%, 100% {
-    transform: translate(0);
-  }
-  33% {
-    transform: translate(-2px, -2px);
-  }
-  66% {
-    transform: translate(2px, -2px);
-  }
-}
+/* Glitch animations removed for performance */
 
-@keyframes glitch-after {
-  0%, 100% {
-    transform: translate(0);
-  }
-  33% {
-    transform: translate(2px, 2px);
-  }
-  66% {
-    transform: translate(-2px, 2px);
-  }
-}
-
-/* Disable glitch effects on mobile for performance */
-@media (max-width: 767px) {
-  .platform-link:hover .link-text {
-    animation: none;
-  }
-  
-  .artist-name:hover::before,
-  .artist-name:hover::after {
-    animation: none;
-  }
-}
+/* Animations removed globally for performance */
 
 .link-arrow {
   font-size: var(--text-xl);
@@ -225,28 +172,4 @@
   }
 }
 
-/* Fade In Animation */
-.fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Pulse Animation (for CTAs) */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
+/* All animations removed for performance */

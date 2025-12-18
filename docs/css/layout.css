@@ -21,8 +21,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(31, 34, 48, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgb(31, 34, 48);
   border-bottom: 1px solid rgba(143, 157, 183, 0.2);
 }
 
@@ -149,11 +148,10 @@
 }
 
 .hero-content {
-  z-index: 2; /* Above shader canvas */
+  z-index: 2;
   max-width: 800px;
   position: relative;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.85);
   padding: var(--space-2xl) var(--space-xl);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -192,16 +190,6 @@
   transform: translateX(-50%);
   font-size: var(--text-2xl);
   color: var(--comet-muted-blue);
-  animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translate(-50%, 0);
-  }
-  50% {
-    transform: translate(-50%, 10px);
-  }
 }
 
 /* Links Section */
