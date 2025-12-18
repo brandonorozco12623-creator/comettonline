@@ -146,10 +146,8 @@ new p5(function(p) {
     p.noStroke();
     p.frameRate(30); // Limit frame rate for better performance
     
-    // Stop animation if user prefers reduced motion
-    if (prefersReducedMotion) {
-      p.noLoop();
-    }
+    // Pause animation for maximum performance
+    p.noLoop();
   };
 
   p.draw = function() {

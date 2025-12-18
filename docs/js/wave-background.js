@@ -15,6 +15,9 @@ function setup() {
   stroke(255, 255, 255, 80);
   noFill();
   frameRate(15); // Reduced from 20 for better performance
+  
+  // Pause animation for maximum performance
+  noLoop();
 }
 
 function draw() {
